@@ -7,6 +7,8 @@
 - **IDE**: Android Studio
 - **Build System**: Gradle
 - **Java Version**: Java 21 (target and source compatibility)
+- **🔥 MAJOR: Backend Database**: Firebase Realtime Database
+- **🔥 MAJOR: Image CDN**: Cloudinary
 
 ## Development Setup
 - **OS**: macOS (darwin 25.0.0)
@@ -14,6 +16,10 @@
 - **Project Path**: `/Users/holden.nguyen/AndroidStudioProjects/travel-app-android`
 - **IDE Configuration**: Android Studio with Java 21 support
 - **VS Code Integration**: Java configuration for cross-IDE development
+- **Firebase Integration**: Firebase Console setup and database.json imported
+- **Cloudinary Integration**: Image assets uploaded and CDN configured
+- **Cloudinary Account**: holdennguyen6174@gmail.com
+- **Cloudinary Folder**: "travel-app-android" (media library organization)
 
 ## Current Dependencies
 **Core Android Dependencies:**
@@ -29,24 +35,48 @@
 **Image Loading:**
 - **Glide**: `com.github.bumptech.glide:glide:4.16.0`
 
+**Backend Services (External):**
+- **Firebase Realtime Database**: Real-time data sync and offline support
+- **Cloudinary**: Professional image management and CDN delivery
+
+**Next to Add:**
+- **Firebase SDK**: Android Firebase dependencies for database integration
+- **Firebase Auth**: (If user authentication needed)
+
 ## Technical Constraints
-- **Minimum SDK**: TBD (based on standard Android project template)
-- **Target SDK**: TBD (based on standard Android project template)
+- **Minimum SDK**: TBD (based on Firebase SDK requirements)
+- **Target SDK**: TBD (based on Firebase SDK requirements)
 - **Java Version**: 21 (compile target)
 - **View Binding**: Enabled for all modules
+- **Firebase Rules**: Database security rules need implementation
+- **Cloudinary Limits**: API usage and storage limits per plan
 
-## API Integration Requirements
-*To be defined based on travel app functionality needs*
+## Backend Integration Architecture
+**Firebase Realtime Database:**
+- **Status**: Connected and database.json imported
+- **Features**: Real-time sync, offline support, JSON-based NoSQL
+- **Integration**: Requires Firebase SDK addition to Android app
+
+**Cloudinary CDN:**
+- **Status**: Images uploaded and integrated with Firebase
+- **Account**: holdennguyen6174@gmail.com
+- **Media Library Folder**: "travel-app-android"
+- **Features**: Image optimization, transformation, global CDN
+- **Integration**: URLs stored in Firebase, loaded via Glide
+- **Organization**: All travel app images organized in dedicated folder
 
 ## Database/Storage Strategy
-*To be defined based on data persistence requirements*
-- Likely candidates: Room database for local storage
-- SharedPreferences for app settings
+- **Primary Data**: Firebase Realtime Database (real-time sync)
+- **Images**: Cloudinary CDN (optimized delivery from "travel-app-android" folder)
+- **Local Cache**: Firebase local persistence (offline support)
+- **Image Cache**: Glide automatic caching (performance)
+- **App Settings**: SharedPreferences for local app configuration
 
 ## Network/Connectivity Patterns
-*To be defined based on API integration and offline capabilities*
-- Glide handles image loading from network sources
-- Future: Retrofit for API integration
+- **Real-time Data**: Firebase WebSocket connections for live updates
+- **Image Loading**: Cloudinary CDN via Glide HTTP requests (from travel-app-android folder)
+- **Offline Support**: Firebase local persistence maintains app functionality
+- **Data Sync**: Automatic sync when connection restored
 
 ## Tool Usage Patterns
 - **Android Studio**: Primary IDE for development
@@ -54,14 +84,18 @@
 - **Git**: Version control with comprehensive commit history
 - **VS Code**: Optional secondary IDE with Java support
 - **ViewBinding**: Type-safe view access replacing findViewById()
+- **Firebase Console**: Database management and monitoring
+- **Cloudinary Dashboard**: Image asset management and analytics (travel-app-android folder)
 
 ## Development Workflow
 - **Memory Bank**: Documentation-first development approach
 - **Commit Strategy**: Detailed commits with comprehensive descriptions
-- **UI-First**: Establishing UI framework before core features
+- **Backend-First**: Established complete backend infrastructure before app integration
+- **Real-time Development**: Firebase enables live data testing during development
 
 ## Deployment Strategy
-*To be defined based on distribution requirements (Google Play, etc.)*
-- Target: Google Play Store
-- Build variants: Debug, Release
-- ProGuard: Enabled for release builds 
+- **Target**: Google Play Store
+- **Build Variants**: Debug, Release
+- **ProGuard**: Enabled for release builds
+- **Firebase Environment**: Production database with proper security rules
+- **Cloudinary**: Production CDN with optimized delivery settings (travel-app-android folder) 
