@@ -33,12 +33,15 @@
 - **Modern Navigation**: Bottom navigation with chip-style indicators
 - **Responsive Design**: Multi-density icon support for all devices
 - **Travel-focused UI**: Icons and styling tailored for travel app use cases
+- **🔥 MANDATORY WORKFLOW**: After every commit, Memory Bank must be reviewed and updated with significant changes
+- **Documentation-First**: All architectural and technical decisions must be captured immediately
 
 ## Current Learnings and Project Insights
 - **UI Foundation Complete**: All essential UI libraries and resources in place
 - **Professional Setup**: Comprehensive icon library and styling system ready
 - **Architecture Ready**: ViewBinding enables clean MVVM implementation
 - **Travel App Focus**: Icon set suggests booking, navigation, and travel features
+- **Memory Bank Workflow**: Established mandatory process for maintaining documentation accuracy
 
 ## Blockers/Issues
 *None identified at this time*
@@ -47,4 +50,5 @@
 - UI framework and dependencies are fully established
 - Ready to begin implementing travel app screens and functionality
 - Architecture decisions (ViewBinding, navigation) are in place
-- Custom styling and icon library available for immediate use 
+- Custom styling and icon library available for immediate use
+- Memory Bank workflow established to ensure continuity between sessions 

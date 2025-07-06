@@ -3,6 +3,15 @@
 ## Overview
 This Memory Bank serves as the complete knowledge base for the Travel App Android project. Due to memory resets between sessions, this documentation is **critical** for maintaining project continuity and understanding.
 
+## 🔥 CRITICAL WORKFLOW RULE
+**After EVERY commit, the Memory Bank MUST be reviewed and updated with any significant changes.**
+
+This ensures:
+- Complete session continuity
+- Accurate project state tracking
+- Proper documentation of all decisions and changes
+- Effective knowledge transfer between development sessions
+
 ## File Structure
 ```
 memory-bank/
@@ -59,10 +68,38 @@ memory-bank/
 2. Update `activeContext.md` with progress and insights
 3. Note any architectural decisions in `systemPatterns.md`
 
+### 🔥 MANDATORY: After Every Commit
+1. **Review the commit changes** - understand what was added/modified
+2. **Update relevant Memory Bank files** with new information:
+   - `activeContext.md` - Recent changes and new focus areas
+   - `progress.md` - Completed tasks and updated status
+   - `systemPatterns.md` - New architectural decisions or patterns
+   - `techContext.md` - New dependencies or technical changes
+   - `projectbrief.md` - If project direction evolved
+   - `productContext.md` - If features or user needs changed
+3. **Commit the Memory Bank updates** with descriptive message
+4. **Verify all significant changes are documented** for future sessions
+
 ### When Requested "update memory bank"
 1. **Must** review ALL files, even if unchanged
 2. Focus particularly on `activeContext.md` and `progress.md`
 3. Document current state, insights, and next steps
+
+## Workflow Integration
+```
+Development Work → Git Commit → Review Changes → Update Memory Bank → Commit Memory Bank Updates → Continue Development
+```
+
+## Project Status
+- **Created**: During initial project setup
+- **Current Phase**: UI Foundation established, architecture documented
+- **Next Steps**: Core feature implementation with comprehensive documentation
+
+## Key Reminders
+- **Never skip Memory Bank updates** after commits
+- **Memory Bank accuracy is critical** for session continuity
+- **Document decisions immediately** while context is fresh
+- **All architectural and technical changes must be captured**
 
 ## Project Status
 - **Created**: During initial project setup
