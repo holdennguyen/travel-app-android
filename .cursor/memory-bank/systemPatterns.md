@@ -1,6 +1,62 @@
 # System Patterns: Travel App Android
 
 ## System Architecture
+```
+🚀 APP STRUCTURE (CURRENT)
+┌─────────────────────────────────────┐
+│          SplashActivity             │
+│      (Launcher - ViewBinding)       │
+│     "Explorer te World with us"     │
+└─────────────┬───────────────────────┘
+              │ Intent Navigation
+              ▼
+┌─────────────────────────────────────┐
+│          MainActivity               │
+│      (Foundation - EdgeToEdge)      │
+│    [Ready for Navigation Framework] │
+└─────────────────────────────────────┘
+
+🔥 BACKEND INTEGRATION (READY)
+┌─────────────────────────────────────┐
+│     Firebase Realtime Database     │
+│      (SDK 21.0.0 Integrated)       │
+│     ◄─────► Android App             │
+└─────────────────────────────────────┘
+┌─────────────────────────────────────┐
+│       Cloudinary CDN Images        │
+│    (travel-app-android folder)      │
+│     ◄─────► Image Loading           │
+└─────────────────────────────────────┘
+
+NEXT: MVVM Implementation
+┌─────────────────────────────────────┐
+│      Data Models & Repositories     │
+│           ViewModels                │
+│        Core Screens                 │
+└─────────────────────────────────────┘
+```
+
+## Key Technical Decisions
+
+### **🚀 App Structure Patterns**
+- **Splash-First Launch**: SplashActivity as entry point for branding
+- **Foundation Pattern**: MainActivity as extensible foundation
+- **ViewBinding Implementation**: Type-safe view access established
+- **EdgeToEdge Design**: Modern Android UI standards
+- **Intent Navigation**: Clean activity transition pattern
+
+### **Activity Architecture**
+- **SplashActivity**: 
+  - Travel app branding and welcome experience
+  - ViewBinding integration (`ActivitySplashBinding`)
+  - Simple button navigation to MainActivity
+  - Launcher activity with proper intent filters
+- **MainActivity**:
+  - Foundation activity for main app features
+  - EdgeToEdge support for modern UI
+  - Constraint layout base ready for navigation framework
+  - Prepared for MVVM implementation
+
 **IMPLEMENTED Architecture**: MVVM (Model-View-ViewModel) with ViewBinding + Firebase SDK Integration
 - **Frontend**: Android App with ViewBinding for type-safe view references
 - **Backend**: Firebase Realtime Database with Android SDK 21.0.0 integrated
