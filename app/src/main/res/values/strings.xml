@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">travel-app-android</string>
+    <string name="search">Search</string>
+    <string name="see_all">See all</string>
+    <string name="popular_destination">Popular Destination</string>
+    <string name="address_city">Address,City...</string>
+    <string name="recommended">Recommended</string>
 </resources>
