@@ -8,11 +8,17 @@ import android.widget.ArrayAdapter;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
 
+import com.example.travel_app_android.Adapter.CategoryAdapter;
+import com.example.travel_app_android.Adapter.PopularAdapter;
+import com.example.travel_app_android.Adapter.RecommendedAdapter;
 import com.example.travel_app_android.Adapter.SliderAdapter;
+import com.example.travel_app_android.Domain.Category;
+import com.example.travel_app_android.Domain.Item;
 import com.example.travel_app_android.Domain.Location;
 import com.example.travel_app_android.Domain.SliderItems;
 import com.example.travel_app_android.R;
@@ -42,6 +48,92 @@ public class MainActivity extends AppCompatActivity {
         
         initLocations();
         initBanners();
+        initCategory();
+        initPopular();
+        initRecommended();
+    }
+
+    private void initRecommended() {
+        DatabaseReference myref = database.getReference("Item");
+        ArrayList<Item> list = new ArrayList<>();
+        myref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()) {
+                    for(DataSnapshot issuee : snapshot.getChildren()) {
+                        list.add(issuee.getValue(Item.class));
+                    }
+                    if(!list.isEmpty()) {
+                        binding.recyclerViewRecommended.setLayoutManager(new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false));
+                        RecyclerView.Adapter adapter = new RecommendedAdapter(list);
+                        binding.recyclerViewRecommended.setAdapter(adapter);
+                    }
+                    binding.progressBarRecommended.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e(TAG, "Firebase database error: " + error.getMessage());
+                Log.e(TAG, "Error code: " + error.getCode());
+                Log.e(TAG, "Error details: " + error.getDetails());
+            }
+        });
+    }
+
+    private void initPopular() {
+        DatabaseReference myref = database.getReference("Popular");
+        ArrayList<Item> list = new ArrayList<>();
+        myref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()) {
+                    for(DataSnapshot issuee : snapshot.getChildren()) {
+                        list.add(issuee.getValue(Item.class));
+                    }
+                    if(!list.isEmpty()) {
+                        binding.recyclerViewPopular.setLayoutManager(new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false));
+                        RecyclerView.Adapter adapter = new PopularAdapter(list);
+                        binding.recyclerViewPopular.setAdapter(adapter);
+                    }
+                    binding.progressBarPopular.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e(TAG, "Firebase database error: " + error.getMessage());
+                Log.e(TAG, "Error code: " + error.getCode());
+                Log.e(TAG, "Error details: " + error.getDetails());
+            }
+        });
+    }
+    private void initCategory() {
+        DatabaseReference myref = database.getReference("Category");
+        ArrayList<Category> list = new ArrayList<>();
+        myref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()) {
+                    for(DataSnapshot issuee : snapshot.getChildren()) {
+                        list.add(issuee.getValue(Category.class));
+                    }
+                    if(!list.isEmpty()) {
+                        binding.recyclerViewCategory.setLayoutManager(new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false));
+                        RecyclerView.Adapter adapter = new CategoryAdapter(list);
+                        binding.recyclerViewCategory.setAdapter(adapter);
+                    }
+                    binding.progressBarCategory.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e(TAG, "Firebase database error: " + error.getMessage());
+                Log.e(TAG, "Error code: " + error.getCode());
+                Log.e(TAG, "Error details: " + error.getDetails());
+            }
+        });
     }
 
     private void initLocations() {
