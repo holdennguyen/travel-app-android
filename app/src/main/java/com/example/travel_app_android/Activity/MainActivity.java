@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         
         // Initialize Firebase with explicit database URL
-        database = FirebaseDatabase.getInstance("https://travel-app-android-73928-default-rtdb.firebaseio.com/");
+        database = FirebaseDatabase.getInstance("https://travel-app-android-73928-default-rtdb.asia-southeast1.firebasedatabase.app/");
         
         initLocations();
 
