@@ -11,79 +11,79 @@
         {
             "Id": 0,
             "ImagePath": "https://res.cloudinary.com/dkikc5ywq/image/upload/v1744897672/cat1_axlnep.png",
-            "Name": "Beach"
+            "Name": "Biển"
         },
         {
             "Id": 1,
             "ImagePath": "https://res.cloudinary.com/dkikc5ywq/image/upload/v1744897673/cat2_hhr8ya.png",
-            "Name": "Camp"
+            "Name": "Cắm trại"
         },
         {
             "Id": 2,
             "ImagePath": "https://res.cloudinary.com/dkikc5ywq/image/upload/v1744897673/cat3_xisw9t.png",
-            "Name": "Jungle"
+            "Name": "Rừng rậm"
         },
         {
             "Id": 3,
             "ImagePath": "https://res.cloudinary.com/dkikc5ywq/image/upload/v1744897673/cat4_pa7wb0.png",
-            "Name": "Desert"
+            "Name": "Sa mạc"
         },
         {
             "Id": 4,
             "ImagePath": "https://res.cloudinary.com/dkikc5ywq/image/upload/v1744897673/cat5_gxiy2z.png",
-            "Name": "Mountain"
+            "Name": "Núi"
         },
         {
             "Id": 5,
             "ImagePath": "https://res.cloudinary.com/dkikc5ywq/image/upload/v1744897673/cat5_gxiy2z.png",
-            "Name": "Mountain"
+            "Name": "Núi"
         }
     ],
     "Item": [
         {
-            "address": "Hawaie, USA",
+            "address": "Hawaii, Hoa Kỳ",
             "bed": 2,
-            "dateTour": "17 June 2024",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing  elit,sed do eiusmod tempor incididunt ut labore et  dolore magna aliqua. Ut enim ad minim veniam, quis  nostrud exercitation ullamco laboris nisi ut aliquip  ex ea commodo consequat. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris  nisi ut aliquip ex ea commodo consequat. ",
+            "dateTour": "17 Tháng 6 2024",
+            "description": "Khám phá vẻ đẹp tuyệt vời của bãi biển Hawaii với làn nước trong xanh và bãi cát trắng mịn. Trải nghiệm hoạt động lặn biển, thưởng thức ẩm thực địa phương và tận hưởng những hoàng hôn lãng mạn bên bờ biển. Chuyến đi này sẽ mang lại cho bạn những kỷ niệm khó quên với thiên nhiên nhiệt đới tuyệt đẹp và văn hóa bản địa độc đáo.",
             "distance": "30Km",
-            "duration": "3D / 2N",
+            "duration": "3d2n",
             "pic": "https://res.cloudinary.com/dkikc5ywq/image/upload/v1744897640/location_1_psppir.jpg",
             "price": 900,
             "score": 4.5,
             "timeTour": "8:00 PM",
-            "title": "Band Island Beach",
+            "title": "Bãi biển đảo Band",
             "tourGuideName": "Tina Anderson",
             "tourGuidePhone": "001123456789",
             "tourGuidePic": "https://res.cloudinary.com/dkikc5ywq/image/upload/v1744897672/profile_wxamui.png"
         },
         {
-            "address": "Lombok,Indonesia",
+            "address": "Lombok, Indonesia",
             "bed": 1,
-            "dateTour": "18 June 2024",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing  elit,sed do eiusmod tempor incididunt ut labore et  dolore magna aliqua. Ut enim ad minim veniam, quis  nostrud exercitation ullamco laboris nisi ut aliquip  ex ea commodo consequat. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris  nisi ut aliquip ex ea commodo consequat. ",
+            "dateTour": "18 Tháng 6 2024",
+            "description": "Hành trình khám phá đảo Komodo - nơi sinh sống của loài rồng Komodo huyền thoại. Tham quan vườn quốc gia, chiêm ngưỡng những con rồng khổng lồ trong môi trường tự nhiên và khám phá các bãi biển hoang sơ xung quanh. Trải nghiệm trekking qua địa hình đa dạng và tìm hiểu về hệ sinh thái độc đáo của Indonesia.",
             "distance": "20Km",
-            "duration": "3D / 2N",
+            "duration": "3d2n",
             "pic": "https://res.cloudinary.com/dkikc5ywq/image/upload/v1744897640/location_3_td4yp6.jpg",
             "price": 800,
             "score": 4.6,
             "timeTour": "4:00 PM",
-            "title": "Komodo Island",
+            "title": "Đảo Komodo",
             "tourGuideName": "Tina Anderson",
             "tourGuidePhone": "001123456789",
             "tourGuidePic": "https://res.cloudinary.com/dkikc5ywq/image/upload/v1744897672/profile_wxamui.png"
         },
         {
-            "address": "LosAngles, USA",
+            "address": "Los Angeles, Hoa Kỳ",
             "bed": 2,
-            "dateTour": "20 July 2024",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing  elit,sed do eiusmod tempor incididunt ut labore et  dolore magna aliqua. Ut enim ad minim veniam, quis  nostrud exercitation ullamco laboris nisi ut aliquip  ex ea commodo consequat. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris  nisi ut aliquip ex ea commodo consequat. ",
+            "dateTour": "20 Tháng 7 2024",
+            "description": "Khám phá bãi biển Kelingking nổi tiếng với vách đá hình chữ T độc đáo và tầm nhìn panorama tuyệt đẹp. Trải nghiệm leo núi, chụp ảnh tại các điểm sống ảo và tắm biển tại những vịnh kín đáo. Chuyến đi này sẽ mang lại cho bạn những trải nghiệm phiêu lưu đáng nhớ và cơ hội khám phá thiên nhiên hoang dã California.",
             "distance": "90Km",
-            "duration": "2D / 1N",
+            "duration": "2d1n",
             "pic": "https://res.cloudinary.com/dkikc5ywq/image/upload/v1744897641/location_4_zxcxts.jpg",
             "price": 750,
             "score": 4.9,
             "timeTour": "2:00 PM",
-            "title": "Kelingking Beach",
+            "title": "Bãi biển Kelingking",
             "tourGuideName": "Tina Anderson",
             "tourGuidePhone": "001123456789",
             "tourGuidePic": "https://res.cloudinary.com/dkikc5ywq/image/upload/v1744897672/profile_wxamui.png"
@@ -91,10 +91,10 @@
         {
             "address": "Bali, Indonesia",
             "bed": 3,
-            "dateTour": "10 July 2024",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing  elit,sed do eiusmod tempor incididunt ut labore et  dolore magna aliqua. Ut enim ad minim veniam, quis  nostrud exercitation ullamco laboris nisi ut aliquip  ex ea commodo consequat. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris  nisi ut aliquip ex ea commodo consequat. ",
+            "dateTour": "10 Tháng 7 2024",
+            "description": "Khám phá đảo Nusa Penida - viên ngọc ẩn của Indonesia với những bãi biển tuyệt đẹp và vách đá hùng vĩ. Tham quan đền Hindu cổ kính, trải nghiệm snorkeling trong làn nước trong vắt và thưởng thức ẩm thực Bali truyền thống. Chuyến đi này kết hợp hoàn hảo giữa thư giãn và khám phá văn hóa độc đáo của Indonesia.",
             "distance": "200Km",
-            "duration": "1D / 1N",
+            "duration": "1d1n",
             "pic": "https://res.cloudinary.com/dkikc5ywq/image/upload/v1744897640/location_3_td4yp6.jpg",
             "price": 600,
             "score": 4.1,
@@ -108,11 +108,11 @@
     "Location": [
         {
             "Id": 0,
-            "loc": "LA california"
+            "loc": "Los Angeles, California"
         },
         {
             "Id": 1,
-            "loc": "NY manhattan"
+            "loc": "New York, Manhattan"
         },
         {
             "Id": 2,
@@ -120,17 +120,17 @@
         },
         {
             "Id": 3,
-            "loc": "Lombok,Indonesia"
+            "loc": "Lombok, Indonesia"
         }
     ],
     "Popular": [
         {
             "address": "Bali, Indonesia",
             "bed": 3,
-            "dateTour": "10 July 2024",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing  elit,sed do eiusmod tempor incididunt ut labore et  dolore magna aliqua. Ut enim ad minim veniam, quis  nostrud exercitation ullamco laboris nisi ut aliquip  ex ea commodo consequat. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris  nisi ut aliquip ex ea commodo consequat. ",
+            "dateTour": "10 Tháng 7 2024",
+            "description": "Khám phá đảo Nusa Penida - viên ngọc ẩn của Indonesia với những bãi biển tuyệt đẹp và vách đá hùng vĩ. Tham quan đền Hindu cổ kính, trải nghiệm snorkeling trong làn nước trong vắt và thưởng thức ẩm thực Bali truyền thống. Chuyến đi này kết hợp hoàn hảo giữa thư giãn và khám phá văn hóa độc đáo của Indonesia.",
             "distance": "200Km",
-            "duration": "1D / 1N",
+            "duration": "1d1n",
             "pic": "https://res.cloudinary.com/dkikc5ywq/image/upload/v1744897643/location_6_carlrn.jpg",
             "price": 600,
             "score": 4.1,
@@ -141,33 +141,33 @@
             "tourGuidePic": "https://res.cloudinary.com/dkikc5ywq/image/upload/v1744897672/profile_wxamui.png"
         },
         {
-            "address": "LosAngles, USA",
+            "address": "Los Angeles, Hoa Kỳ",
             "bed": 2,
-            "dateTour": "20 July 2024",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing  elit,sed do eiusmod tempor incididunt ut labore et  dolore magna aliqua. Ut enim ad minim veniam, quis  nostrud exercitation ullamco laboris nisi ut aliquip  ex ea commodo consequat. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris  nisi ut aliquip ex ea commodo consequat. ",
+            "dateTour": "20 Tháng 7 2024",
+            "description": "Khám phá bãi biển Kelingking nổi tiếng với vách đá hình chữ T độc đáo và tầm nhìn panorama tuyệt đẹp. Trải nghiệm leo núi, chụp ảnh tại các điểm sống ảo và tắm biển tại những vịnh kín đáo. Chuyến đi này sẽ mang lại cho bạn những trải nghiệm phiêu lưu đáng nhớ và cơ hội khám phá thiên nhiên hoang dã California.",
             "distance": "90Km",
-            "duration": "2D / 1N",
+            "duration": "2d1n",
             "pic": "https://res.cloudinary.com/dkikc5ywq/image/upload/v1744897650/location_2_bx8zmk.jpg",
             "price": 750,
             "score": 4.9,
             "timeTour": "2:00 PM",
-            "title": "Kelingking Beach",
+            "title": "Bãi biển Kelingking",
             "tourGuideName": "Tina Anderson",
             "tourGuidePhone": "001123456789",
             "tourGuidePic": "https://res.cloudinary.com/dkikc5ywq/image/upload/v1744897672/profile_wxamui.png"
         },
         {
-            "address": "Hawaie, USA",
+            "address": "Hawaii, Hoa Kỳ",
             "bed": 2,
-            "dateTour": "17 June 2024",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing  elit,sed do eiusmod tempor incididunt ut labore et  dolore magna aliqua. Ut enim ad minim veniam, quis  nostrud exercitation ullamco laboris nisi ut aliquip  ex ea commodo consequat. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris  nisi ut aliquip ex ea commodo consequat. ",
+            "dateTour": "17 Tháng 6 2024",
+            "description": "Khám phá vẻ đẹp tuyệt vời của bãi biển Hawaii với làn nước trong xanh và bãi cát trắng mịn. Trải nghiệm hoạt động lặn biển, thưởng thức ẩm thực địa phương và tận hưởng những hoàng hôn lãng mạn bên bờ biển. Chuyến đi này sẽ mang lại cho bạn những kỷ niệm khó quên với thiên nhiên nhiệt đới tuyệt đẹp và văn hóa bản địa độc đáo.",
             "distance": "30Km",
-            "duration": "3D / 2N",
+            "duration": "3d2n",
             "pic": "https://res.cloudinary.com/dkikc5ywq/image/upload/v1744897651/location_7_dxpg9m.jpg",
             "price": 900,
             "score": 4.5,
             "timeTour": "8:00 PM",
-            "title": "Band Island Beach",
+            "title": "Bãi biển đảo Band",
             "tourGuideName": "Tina Anderson",
             "tourGuidePhone": "001123456789",
             "tourGuidePic": "https://res.cloudinary.com/dkikc5ywq/image/upload/v1744897672/profile_wxamui.png"

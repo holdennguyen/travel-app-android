@@ -1,16 +1,49 @@
 <resources>
-    <string name="app_name">travel-app-android</string>
-    <string name="search">Search</string>
-    <string name="see_all">See all</string>
-    <string name="popular_destination">Popular Destination</string>
-    <string name="address_city">Address,City...</string>
-    <string name="recommended">Recommended</string>
-    <string name="upcoming_trip">Upcoming trip</string>
-    <string name="title">Title</string>
-    <string name="show_this_ticket_to_the_your_guide_before_departure">Show this ticket to your guide before departure</string>
-    <string name="tour_guide">Tour Guide</string>
-    <string name="time">Time</string>
-    <string name="total_guest">Total Guest</string>
-    <string name="tip_duration">Tip Duration</string>
-    <string name="download_ticket">Download Ticket</string>
+    <string name="app_name">Ứng dụng Du lịch</string>
+    <string name="search">Tìm kiếm</string>
+    <string name="see_all">Xem tất cả</string>
+    <string name="popular_destination">Điểm đến phổ biến</string>
+    <string name="address_city">Địa chỉ, Thành phố...</string>
+    <string name="recommended">Được đề xuất</string>
+    <string name="upcoming_trip">Chuyến đi sắp tới</string>
+    <string name="title">Tiêu đề</string>
+    <string name="show_this_ticket_to_the_your_guide_before_departure">Xuất trình vé này cho hướng dẫn viên trước khi khởi hành</string>
+    <string name="tour_guide">Hướng dẫn viên</string>
+    <string name="time">Thời gian</string>
+    <string name="total_guest">Tổng số khách</string>
+    <string name="tip_duration">Thời lượng chuyến đi</string>
+    <string name="download_ticket">Tải xuống vé</string>
+    
+    <!-- Splash Screen -->
+    <string name="splash_title">Khám phá thế giới\ncùng với chúng tôi</string>
+    <string name="splash_description">Trải nghiệm những chuyến đi tuyệt vời\nvà tạo ra những kỷ niệm đáng nhớ</string>
+    <string name="start">Bắt đầu</string>
+    
+    <!-- Main Activity -->
+    <string name="location">Vị trí</string>
+    
+    <!-- Common -->
+    <string name="per_person">/Người</string>
+    <string name="address">Địa chỉ</string>
+    <string name="price_placeholder">$0</string>
+    <string name="rating_placeholder">5</string>
+    <string name="number_placeholder">0</string>
+    <string name="duration_placeholder">- phút</string>
+    <string name="distance_placeholder">0</string>
+    
+    <!-- Detail Activity -->
+    <string name="duration">Thời lượng</string>
+    <string name="distance">Khoảng cách</string>
+    <string name="bed">Giường</string>
+    <string name="description">Mô tả</string>
+    <string name="description_placeholder">Văn bản mô tả</string>
+    <string name="add_to_cart">Thêm vào giỏ</string>
+    <string name="price_display">$000</string>
+    
+    <!-- Ticket Activity -->
+    <string name="ticket_detail">Chi tiết vé</string>
+    <string name="order_id">Mã đơn hàng: 987654</string>
+    <string name="tour_guide_short">Hướng dẫn viên</string>
+    <string name="guide_name">Tên</string>
+    <string name="placeholder_dash">-</string>
 </resources>
