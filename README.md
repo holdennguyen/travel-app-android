@@ -46,15 +46,23 @@ graph TD
     A[🚀 Màn hình Khởi động] --> B[🏠 Màn hình Chính]
     B --> C[📋 Màn hình Chi tiết]
     C --> D[🎫 Màn hình Đặt vé]
+    C --> E[👤 Màn hình Hồ sơ]
     
-    B --> E[🔍 Tìm kiếm]
-    B --> F[📍 Chọn vị trí]
-    B --> G[🏞️ Danh mục]
-    B --> H[⭐ Phổ biến]
-    B --> I[💡 Đề xuất]
+    B --> F[🔍 Tìm kiếm]
+    B --> G[📍 Chọn vị trí]
+    B --> H[🏞️ Danh mục]
+    B --> I[⭐ Phổ biến]
+    B --> J[💡 Đề xuất]
+    B --> K[👤 Hồ sơ]
     
-    D --> J[📞 Gọi hướng dẫn viên]
-    D --> K[💬 Nhắn tin]
+    D --> L[📞 Gọi hướng dẫn viên]
+    D --> M[💬 Nhắn tin]
+    
+    C --> N["➕ Thêm vào giỏ"] --> E
+    E --> O[📝 Tạo đặt chỗ]
+    E --> P[✏️ Chỉnh sửa đặt chỗ]
+    E --> Q[🗑️ Xóa đặt chỗ]
+    E --> R[👁️ Xem chi tiết]
 ```
 
 ## 📚 Mục tiêu Giáo dục
@@ -149,7 +157,9 @@ viewBinding { enabled = true }
 | **Mục Đề xuất** | ✅ Hoàn thành | Gợi ý du lịch cá nhân hóa |
 | **Màn hình Chi tiết** | ✅ Hoàn thành | Thông tin mục hoàn chỉnh với hình ảnh |
 | **Màn hình Đặt chỗ** | ✅ Hoàn thành | Liên hệ hướng dẫn viên và chi tiết đặt chỗ |
-| **Luồng Điều hướng** | ✅ Hoàn thành | Hành trình người dùng liền mạch 3 màn hình |
+| **Màn hình Hồ sơ** | ✅ Hoàn thành | Quản lý đặt chỗ với thiết kế hiện đại |
+| **Hệ thống CRUD** | ✅ Hoàn thành | Tạo, đọc, cập nhật, xóa đặt chỗ |
+| **Luồng Điều hướng** | ✅ Hoàn thành | Hành trình người dùng hoàn chỉnh 4 màn hình |
 
 ### 🌍 Tính năng Bản địa hóa
 | Thành phần | Trạng thái Tiếng Việt | Triển khai |
@@ -160,6 +170,16 @@ viewBinding { enabled = true }
 | **Ngày & Thời lượng** | ✅ Hoàn thành | Định dạng tiếng Việt + ký hiệu compact |
 | **Thông báo Lỗi** | ✅ Hoàn thành | Văn bản tiếng Việt thân thiện người dùng |
 
+### 📱 Hệ thống Quản lý Đặt chỗ (CRUD)
+| Chức năng | Trạng thái | Mô tả chi tiết |
+|-----------|------------|----------------|
+| **Tạo Đặt chỗ (Create)** | ✅ Hoàn thành | Nút "Thêm vào giỏ" từ màn hình chi tiết → tự động tạo đặt chỗ |
+| **Xem Đặt chỗ (Read)** | ✅ Hoàn thành | Hiển thị danh sách đặt chỗ với cập nhật thời gian thực |
+| **Cập nhật Đặt chỗ (Update)** | ✅ Hoàn thành | Chỉnh sửa số khách, ngày tour, trạng thái thanh toán |
+| **Xóa Đặt chỗ (Delete)** | ✅ Hoàn thành | Xóa đặt chỗ với hộp thoại xác nhận |
+| **Thiết kế Hiện đại** | ✅ Hoàn thành | Card style với góc bo tròn và shadow |
+| **Trạng thái Trực quan** | ✅ Hoàn thành | Màu sắc và nhãn cho trạng thái đặt chỗ và thanh toán |
+
 ### 🔧 Tính năng Kỹ thuật
 | Tính năng | Trạng thái | Chi tiết Triển khai |
 |-----------|------------|-------------------|
@@ -169,6 +189,7 @@ viewBinding { enabled = true }
 | **Điều hướng** | ✅ Hoàn thành | Điều hướng dựa Intent với truyền dữ liệu |
 | **Giao tiếp** | ✅ Hoàn thành | Tích hợp SMS và điện thoại cho đặt chỗ |
 | **Thiết kế Responsive** | ✅ Hoàn thành | Hỗ trợ icon đa mật độ |
+| **Firebase Security** | ✅ Hoàn thành | Quy tắc bảo mật cho phép thao tác CRUD |
 
 
 ## 📁 Cấu trúc Dự án
@@ -265,6 +286,11 @@ cd travel-app-android
 # Cấu hình Firebase đã được bao gồm
 # URL Database: https://travel-app-android-73928-default-rtdb.asia-southeast1.firebasedatabase.app/
 # google-services.json đã được cấu hình
+
+# ⚠️ QUAN TRỌNG: Cấu hình Firebase Security Rules
+# Vào Firebase Console → Realtime Database → Rules
+# Sao chép nội dung từ firebase-security-rules-demo.json
+# Và nhấn "Publish" để cho phép thao tác CRUD trên Bookings
 ```
 
 #### 3. Thiết lập Android Studio
@@ -425,11 +451,29 @@ com.example.travel_app_android/
 
 ## 📱 Screenshots & Demo
 
+### 🎯 Hệ thống Đặt chỗ Hoàn chỉnh
+
+#### **Luồng Đặt chỗ Mới:**
+```
+1. 🏠 Trang chủ → Chọn tour phổ biến/đề xuất
+2. 📋 Màn hình chi tiết → Xem thông tin đầy đủ
+3. ➕ Nhấn "Thêm vào giỏ" → Tự động tạo đặt chỗ
+4. 👤 Chuyển đến hồ sơ → Xem đặt chỗ mới tạo
+5. ✏️ Quản lý đặt chỗ → Chỉnh sửa/Xóa theo nhu cầu
+```
+
+#### **Tính năng Hồ sơ:**
+- **📊 Dashboard**: Thông tin người dùng và tổng số đặt chỗ
+- **📋 Danh sách Đặt chỗ**: Hiển thị theo thời gian (mới nhất trước)
+- **🎨 Thiết kế Hiện đại**: Card style với hình ảnh bo góc tròn
+- **⚡ Thao tác Nhanh**: Menu popup với tùy chọn sửa/xóa
+- **🔄 Cập nhật Thời gian thực**: Firebase sync tự động
+
 ### Luồng Ứng dụng
 
 ```mermaid
 journey
-    title Hành trình Người dùng
+    title Hành trình Người dùng Hoàn chỉnh
     section Khởi động
       Mở ứng dụng: 5: User
       Xem splash screen: 4: User
@@ -442,8 +486,13 @@ journey
     section Chi tiết & Đặt chỗ
       Chọn tour du lịch: 5: User
       Xem thông tin chi tiết: 4: User
-      Đặt tour: 5: User
+      Nhấn "Thêm vào giỏ": 5: User
+      Tạo đặt chỗ tự động: 5: User
+    section Quản lý Hồ sơ
+      Xem danh sách đặt chỗ: 4: User
+      Chỉnh sửa đặt chỗ: 4: User
       Liên hệ hướng dẫn viên: 4: User
+      Xóa đặt chỗ: 3: User
 ```
 
 ```
@@ -621,6 +670,22 @@ Dự án này được phát triển cho **mục đích giáo dục** và phục
 
 ---
 
-**📱 Sẵn sàng khám phá phát triển mobile? Clone repository này và bắt đầu hành trình của bạn vào phát triển ứng dụng Android chuyên nghiệp!**
+## 🎉 **Ứng dụng Hoàn chỉnh - Sẵn sàng Sử dụng!**
 
-*Dự án này chứng minh rằng với kế hoạch phù hợp, công cụ hiện đại và kiến trúc tốt, sinh viên có thể xây dựng ứng dụng mobile chất lượng production giải quyết các vấn đề thực tế.* 
+### **✅ Tính năng Đã hoàn thành:**
+- **🏠 Duyệt Tour**: Trang chủ với banner, danh mục, điểm đến phổ biến
+- **📋 Chi tiết Tour**: Thông tin đầy đủ với hình ảnh và đánh giá
+- **🎫 Liên hệ HDV**: SMS và gọi điện trực tiếp đến hướng dẫn viên
+- **➕ Đặt chỗ Nhanh**: Nút "Thêm vào giỏ" tạo đặt chỗ tự động
+- **👤 Quản lý Hồ sơ**: CRUD đầy đủ với thiết kế hiện đại
+- **🌍 Giao diện Tiếng Việt**: Hoàn toàn bản địa hóa và thân thiện
+
+### **🚀 Sẵn sàng để:**
+- **📱 Demo**: Trình bày cho lớp học hoặc khách hàng
+- **🧪 Testing**: Kiểm thử đầy đủ tất cả tính năng
+- **🔧 Mở rộng**: Thêm authentication, payment, maps
+- **🏭 Production**: Deploy với Firebase thực tế
+
+**📱 Sẵn sàng khám phá phát triển mobile? Clone repository này và trải nghiệm ứng dụng du lịch hoàn chỉnh với hệ thống đặt chỗ chuyên nghiệp!**
+
+*Dự án này chứng minh rằng với kế hoạch phù hợp, công cụ hiện đại và kiến trúc tốt, sinh viên có thể xây dựng ứng dụng mobile chất lượng production với đầy đủ tính năng CRUD và giao diện người dùng chuyên nghiệp.* 
