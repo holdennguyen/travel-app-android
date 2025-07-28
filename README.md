@@ -62,7 +62,9 @@ graph TD
     E --> O[📝 Tạo đặt chỗ]
     E --> P[✏️ Chỉnh sửa đặt chỗ]
     E --> Q[🗑️ Xóa đặt chỗ]
-    E --> R[👁️ Xem chi tiết]
+    E --> R["👁️ Click đặt chỗ"] --> D
+    
+    R -.->|"Dữ liệu BookingOrder"| D
 ```
 
 ## 📚 Mục tiêu Giáo dục
@@ -159,6 +161,7 @@ viewBinding { enabled = true }
 | **Màn hình Đặt chỗ** | ✅ Hoàn thành | Liên hệ hướng dẫn viên và chi tiết đặt chỗ |
 | **Màn hình Hồ sơ** | ✅ Hoàn thành | Quản lý đặt chỗ với thiết kế hiện đại |
 | **Hệ thống CRUD** | ✅ Hoàn thành | Tạo, đọc, cập nhật, xóa đặt chỗ |
+| **Điều hướng Đặt chỗ** | ✅ Hoàn thành | Click đặt chỗ → mở màn hình vé chi tiết |
 | **Luồng Điều hướng** | ✅ Hoàn thành | Hành trình người dùng hoàn chỉnh 4 màn hình |
 
 ### 🌍 Tính năng Bản địa hóa
@@ -179,6 +182,7 @@ viewBinding { enabled = true }
 | **Xóa Đặt chỗ (Delete)** | ✅ Hoàn thành | Xóa đặt chỗ với hộp thoại xác nhận |
 | **Thiết kế Hiện đại** | ✅ Hoàn thành | Card style với góc bo tròn và shadow |
 | **Trạng thái Trực quan** | ✅ Hoàn thành | Màu sắc và nhãn cho trạng thái đặt chỗ và thanh toán |
+| **Điều hướng Tích hợp** | ✅ Hoàn thành | Click đặt chỗ → mở TicketActivity với thông tin đầy đủ |
 
 ### 🔧 Tính năng Kỹ thuật
 | Tính năng | Trạng thái | Chi tiết Triển khai |
@@ -595,6 +599,14 @@ binding.searchBtn.setOnClickListener(v -> search());
 - Triển khai interface Serializable trong model Item
 - Sử dụng Intent.putExtra() cho truyền dữ liệu
 - Lấy dữ liệu type-safe trong destination activities
+
+### 5. Điều hướng Đặt chỗ Thống nhất
+**Thử thách**: TicketActivity cần hỗ trợ cả dữ liệu Item (từ DetailActivity) và BookingOrder (từ ProfileActivity)  
+**Giải pháp**: 
+- Thêm logic phát hiện loại dữ liệu trong getIntentExtra()
+- Triển khai createItemFromBooking() để chuyển đổi BookingOrder → Item
+- Sửa đổi BookingAdapter để điều hướng trực tiếp thay vì hiển thị dialog
+- Loại bỏ interface không sử dụng để giữ code sạch
 
 ## 🚀 Cải tiến Tương lai
 
