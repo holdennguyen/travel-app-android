@@ -1,0 +1,33 @@
+{
+  "rules": {
+    "Banner": {
+      ".read": true,
+      ".write": false
+    },
+    
+    "Category": {
+      ".read": true,
+      ".write": false
+    },
+    
+    "Item": {
+      ".read": true,
+      ".write": false
+    },
+    
+    "Popular": {
+      ".read": true,
+      ".write": false
+    },
+    
+    "Location": {
+      ".read": true,
+      ".write": false
+    },
+    
+    "Bookings": {
+      ".read": true,
+      ".write": true
+    }
+  }
+} 

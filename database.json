@@ -172,5 +172,32 @@
             "tourGuidePhone": "001123456789",
             "tourGuidePic": "https://res.cloudinary.com/dkikc5ywq/image/upload/v1744897672/profile_wxamui.png"
         }
-    ]
+    ],
+    "Bookings": {
+        "demo_user_001": {
+            "ORDER_1700000001": {
+                "orderId": "ORDER_1700000001",
+                "userId": "demo_user_001",
+                "userName": "Nguyễn Văn A",
+                "userEmail": "nguyen.vana@email.com",
+                "userPhone": "+84 123 456 789",
+                "itemTitle": "Hawaii, Hoa Kỳ",
+                "itemPic": "https://res.cloudinary.com/dkikc5ywq/image/upload/v1744897640/location_1_psppir.jpg",
+                "itemAddress": "Hawaii, Hoa Kỳ",
+                "duration": "3d2n",
+                "tourGuidePhone": "001123456789",
+                "tourGuideName": "John Smith",
+                "tourGuidePic": "https://res.cloudinary.com/dkikc5ywq/image/upload/v1744897672/profile_wxamui.png",
+                "bookingDate": "20/01/2025",
+                "tourDate": "25/12/2024",
+                "tourTime": "08:00 AM",
+                "numberOfGuests": 2,
+                "totalPrice": 1000,
+                "paymentStatus": "Paid",
+                "bookingStatus": "Confirmed",
+                "specialRequests": "",
+                "timestamp": 1700000001000
+            }
+        }
+    }
 }

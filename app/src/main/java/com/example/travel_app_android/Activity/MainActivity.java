@@ -1,5 +1,6 @@
 package com.example.travel_app_android.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         initCategory();
         initPopular();
         initRecommended();
+        setupBottomNavigation();
     }
 
     private void initRecommended() {
@@ -194,6 +196,24 @@ public class MainActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
+        });
+    }
+
+    private void setupBottomNavigation() {
+        // Set Home as selected by default
+        binding.chipNavigationBar.setItemSelected(R.id.bottom_home, true);
+        
+        binding.chipNavigationBar.setOnItemSelectedListener(id -> {
+            if (id == R.id.bottom_profile) {
+                startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+            } else if (id == R.id.bottom_explorer) {
+                // TODO: Implement Explorer activity
+                // Toast.makeText(MainActivity.this, "Explorer sẽ được triển khai sau", Toast.LENGTH_SHORT).show();
+            } else if (id == R.id.bottom_bookmark) {
+                // TODO: Implement Bookmark activity
+                // Toast.makeText(MainActivity.this, "Bookmark sẽ được triển khai sau", Toast.LENGTH_SHORT).show();
+            }
+            // Home is already current activity, no action needed
         });
     }
 }
