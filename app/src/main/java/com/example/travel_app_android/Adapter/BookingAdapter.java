@@ -2,6 +2,7 @@ package com.example.travel_app_android.Adapter;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +28,6 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.ViewHold
     public interface OnBookingActionListener {
         void onEditBooking(BookingOrder booking, int position);
         void onDeleteBooking(BookingOrder booking, int position);
-        void onViewBookingDetails(BookingOrder booking);
     }
 
     public BookingAdapter(ArrayList<BookingOrder> bookingList) {
@@ -78,11 +78,11 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.ViewHold
         // Handle menu button click
         holder.binding.menuBtn.setOnClickListener(v -> showPopupMenu(v, booking, position));
         
-        // Handle item click to view details
+        // Handle item click to open TicketActivity
         holder.itemView.setOnClickListener(v -> {
-            if (listener != null) {
-                listener.onViewBookingDetails(booking);
-            }
+            Intent intent = new Intent(context, com.example.travel_app_android.Activity.TicketActivity.class);
+            intent.putExtra("booking", booking);
+            context.startActivity(intent);
         });
     }
 

@@ -175,11 +175,7 @@ public class ProfileActivity extends AppCompatActivity implements BookingAdapter
         deleteBookingFromFirebase(booking, position);
     }
 
-    @Override
-    public void onViewBookingDetails(BookingOrder booking) {
-        // Show booking details in a dialog or navigate to detail screen
-        showBookingDetailsDialog(booking);
-    }
+
 
     private void showEditBookingDialog(BookingOrder booking, int position) {
         // Simple edit dialog - in real app, this would be a proper activity/fragment
@@ -249,36 +245,7 @@ public class ProfileActivity extends AppCompatActivity implements BookingAdapter
                 });
     }
 
-    private void showBookingDetailsDialog(BookingOrder booking) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Chi tiết đặt chỗ");
-        
-        String details = "Tour: " + booking.getItemTitle() + "\n" +
-                "Địa điểm: " + booking.getItemAddress() + "\n" +
-                "Số khách: " + booking.getNumberOfGuests() + "\n" +
-                "Tổng tiền: " + booking.getFormattedPrice() + "\n" +
-                "Ngày đặt: " + booking.getBookingDate() + "\n" +
-                "Ngày tour: " + booking.getTourDate() + "\n" +
-                "Thời gian: " + booking.getTourTime() + "\n" +
-                "Hướng dẫn viên: " + booking.getTourGuideName() + "\n" +
-                "SĐT HDV: " + booking.getTourGuidePhone() + "\n" +
-                "Trạng thái: " + booking.getBookingStatus() + "\n" +
-                "Thanh toán: " + booking.getPaymentStatus();
-        
-        builder.setMessage(details);
-        builder.setPositiveButton("Đóng", null);
-        
-        if (!booking.getTourGuidePhone().isEmpty()) {
-            builder.setNeutralButton("Gọi HDV", (dialog, which) -> {
-                // Call tour guide (same as TicketActivity)
-                Intent intent = new Intent(Intent.ACTION_DIAL,
-                        android.net.Uri.fromParts("tel", booking.getTourGuidePhone(), null));
-                startActivity(intent);
-            });
-        }
-        
-        builder.show();
-    }
+
 
     // Static method to create a new booking (called from TicketActivity)
     public static void createBooking(BookingOrder booking) {

@@ -17,6 +17,8 @@ import com.example.travel_app_android.databinding.ActivityTicketBinding;
 public class TicketActivity extends AppCompatActivity {
     ActivityTicketBinding binding;
     private Item object;
+    private BookingOrder booking;
+    private boolean isFromBooking = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,6 +102,31 @@ public class TicketActivity extends AppCompatActivity {
     }
 
     private void getIntentExtra() {
-        object = (Item) getIntent().getSerializableExtra("object");
+        // Check if coming from booking (ProfileActivity)
+        booking = (BookingOrder) getIntent().getSerializableExtra("booking");
+        if (booking != null) {
+            isFromBooking = true;
+            // Create Item object from BookingOrder for compatibility
+            object = createItemFromBooking(booking);
+        } else {
+            // Coming from DetailActivity with Item object
+            object = (Item) getIntent().getSerializableExtra("object");
+            isFromBooking = false;
+        }
+    }
+    
+    private Item createItemFromBooking(BookingOrder booking) {
+        Item item = new Item();
+        item.setTitle(booking.getItemTitle());
+        item.setPic(booking.getItemPic());
+        item.setAddress(booking.getItemAddress());
+        item.setDuration(booking.getDuration());
+        item.setTourGuideName(booking.getTourGuideName());
+        item.setTourGuidePhone(booking.getTourGuidePhone());
+        item.setTourGuidePic(booking.getTourGuidePic());
+        item.setTimeTour(booking.getTourTime());
+        item.setDateTour(booking.getTourDate());
+        item.setPrice(booking.getTotalPrice() / booking.getNumberOfGuests()); // Calculate per person price
+        return item;
     }
 }
