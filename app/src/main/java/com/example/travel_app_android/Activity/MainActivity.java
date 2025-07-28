@@ -34,7 +34,6 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private FirebaseDatabase database;
-    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,17 +53,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initRecommended() {
+
         DatabaseReference myref = database.getReference("Item");
         ArrayList<Item> list = new ArrayList<>();
         myref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()) {
-                    for(DataSnapshot issuee : snapshot.getChildren()) {
+                if (snapshot.exists()) {
+                    for (DataSnapshot issuee : snapshot.getChildren()) {
                         list.add(issuee.getValue(Item.class));
                     }
-                    if(!list.isEmpty()) {
-                        binding.recyclerViewRecommended.setLayoutManager(new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false));
+                    if (!list.isEmpty()) {
+                        binding.recyclerViewRecommended.setLayoutManager(
+                                new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false));
                         RecyclerView.Adapter adapter = new RecommendedAdapter(list);
                         binding.recyclerViewRecommended.setAdapter(adapter);
                     }
@@ -74,25 +75,24 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Log.e(TAG, "Firebase database error: " + error.getMessage());
-                Log.e(TAG, "Error code: " + error.getCode());
-                Log.e(TAG, "Error details: " + error.getDetails());
+
             }
         });
     }
-
     private void initPopular() {
+
         DatabaseReference myref = database.getReference("Popular");
         ArrayList<Item> list = new ArrayList<>();
         myref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()) {
-                    for(DataSnapshot issuee : snapshot.getChildren()) {
+                if (snapshot.exists()) {
+                    for (DataSnapshot issuee : snapshot.getChildren()) {
                         list.add(issuee.getValue(Item.class));
                     }
-                    if(!list.isEmpty()) {
-                        binding.recyclerViewPopular.setLayoutManager(new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false));
+                    if (!list.isEmpty()) {
+                        binding.recyclerViewPopular.setLayoutManager(
+                                new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false));
                         RecyclerView.Adapter adapter = new PopularAdapter(list);
                         binding.recyclerViewPopular.setAdapter(adapter);
                     }
@@ -102,24 +102,24 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Log.e(TAG, "Firebase database error: " + error.getMessage());
-                Log.e(TAG, "Error code: " + error.getCode());
-                Log.e(TAG, "Error details: " + error.getDetails());
+
             }
         });
     }
     private void initCategory() {
+
         DatabaseReference myref = database.getReference("Category");
         ArrayList<Category> list = new ArrayList<>();
         myref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()) {
-                    for(DataSnapshot issuee : snapshot.getChildren()) {
+                if (snapshot.exists()) {
+                    for (DataSnapshot issuee : snapshot.getChildren()) {
                         list.add(issuee.getValue(Category.class));
                     }
-                    if(!list.isEmpty()) {
-                        binding.recyclerViewCategory.setLayoutManager(new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false));
+                    if (!list.isEmpty()) {
+                        binding.recyclerViewCategory.setLayoutManager(
+                                new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false));
                         RecyclerView.Adapter adapter = new CategoryAdapter(list);
                         binding.recyclerViewCategory.setAdapter(adapter);
                     }
@@ -129,59 +129,41 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Log.e(TAG, "Firebase database error: " + error.getMessage());
-                Log.e(TAG, "Error code: " + error.getCode());
-                Log.e(TAG, "Error details: " + error.getDetails());
+
             }
         });
     }
 
     private void initLocations() {
+
         DatabaseReference myref = database.getReference("Location");
         ArrayList<Location> list = new ArrayList<>();
-        
-        Log.d(TAG, "Starting to load locations from Firebase...");
-        
         myref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Log.d(TAG, "Firebase data received. Snapshot exists: " + snapshot.exists());
-                
-                if(snapshot.exists()) {
-                    Log.d(TAG, "Processing " + snapshot.getChildrenCount() + " location items");
-                    
-                    for(DataSnapshot issuee : snapshot.getChildren()) {
-                        Location location = issuee.getValue(Location.class);
-                        if(location != null) {
-                            list.add(location);
-                            Log.d(TAG, "Added location: " + location.toString() + " (ID: " + location.getId() + ")");
-                        } else {
-                            Log.w(TAG, "Failed to parse location data from snapshot");
-                        }
+                if (snapshot.exists()) {
+                    for (DataSnapshot issuee : snapshot.getChildren()) {
+                        list.add(issuee.getValue(Location.class));
                     }
 
                     ArrayAdapter<Location> adapter = new ArrayAdapter<>(MainActivity.this,
                             R.layout.sp_item, list);
                     adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     binding.locationSp.setAdapter(adapter);
-                    
-                    Log.d(TAG, "Location spinner adapter set with " + list.size() + " items");
-                } else {
-                    Log.w(TAG, "No location data found in Firebase");
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Log.e(TAG, "Firebase database error: " + error.getMessage());
-                Log.e(TAG, "Error code: " + error.getCode());
-                Log.e(TAG, "Error details: " + error.getDetails());
+
             }
         });
     }
 
-    private void banners(ArrayList<SliderItems> items) {
-        binding.viewPager2.setAdapter(new SliderAdapter(items,binding.viewPager2));
+    private void banners(
+            ArrayList<SliderItems> items
+    ) {
+        binding.viewPager2.setAdapter(new SliderAdapter(items, binding.viewPager2));
         binding.viewPager2.setClipToPadding(false);
         binding.viewPager2.setClipChildren(false);
         binding.viewPager2.setOffscreenPageLimit(3);

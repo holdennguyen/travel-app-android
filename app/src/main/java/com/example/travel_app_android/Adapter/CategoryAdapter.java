@@ -18,8 +18,8 @@ import java.util.List;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Viewholder> {
     private final List<Category> items;
-    private int selectedPosition=-1;
-    private int lastSelectedPosition=-1;
+    private int selectedPosition = -1;
+    private int lastSelectedPosition = -1;
     private Context context;
 
     public CategoryAdapter(List<Category> items) {
@@ -30,7 +30,8 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Viewho
     @Override
     public CategoryAdapter.Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         context = parent.getContext();
-        ViewholderCategoryBinding binding = ViewholderCategoryBinding.inflate(LayoutInflater.from(context),parent,false);
+        ViewholderCategoryBinding binding =
+                ViewholderCategoryBinding.inflate(LayoutInflater.from(context), parent, false);
         return new Viewholder(binding);
     }
 
@@ -39,7 +40,9 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Viewho
         Category item = items.get(position);
         holder.binding.titleTxt.setText(item.getName());
 
-        Glide.with(holder.itemView.getContext()).load(item.getImagePath()).into(holder.binding.pic);
+        Glide.with(holder.itemView.getContext())
+                .load(item.getImagePath())
+                .into(holder.binding.pic);
 
         holder.binding.getRoot().setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +73,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Viewho
 
     public class Viewholder extends RecyclerView.ViewHolder {
         private final ViewholderCategoryBinding binding;
+
         public Viewholder(ViewholderCategoryBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
